@@ -33,7 +33,7 @@ group :doc do
 end
 
 # Use HTTParty
-gem 'httparty'
+gem 'httparty', '~> 0.12'
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'

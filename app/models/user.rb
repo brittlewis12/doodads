@@ -1,1 +1,4 @@
-class User < ActiveRecord::Base; end
+class User < ActiveRecord::Base
+  validates :first_name, :last_name, :username, :email, :password_digest, presence: true
+  validates :username, :email, uniqueness: true
+end

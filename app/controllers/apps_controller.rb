@@ -4,19 +4,23 @@ class AppsController < ApplicationController
   def index; end
 
   def search
-    query = params[:query].gsub(" ","+")
-    response = HTTParty.get("https://itunes.apple.com/search?term=#{query}&entity=software&limit=10")
-
-    if response["resultCount"] == 0
-      @results = nil
+    if params[:q].nil?
+      render :search
     else
-      @results = []
-      response["results"].each do |result|
-        @results << result
-      end
-    end
+      query = params[:q].gsub(" ","+")
+      response = HTTParty.get("https://itunes.apple.com/search?term=#{query}&entity=software&limit=10")
 
-    render :search  
+      if response["resultCount"] == 0
+        @results = nil
+      else
+        @results = []
+        response["results"].each do |result|
+          @results << result
+        end
+      end
+
+      render :search
+    end
   end
 
   def create; end

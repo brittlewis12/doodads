@@ -1,13 +1,5 @@
-<% if @results.nil? %>
-<p>No results found. Try your search again.</p>
-<% else %>
-  <ul>
-  <% @results.each do |result| %>
-    <li><%= itunes_id = result["trackId"] %></li>
-    <li><%= name = result["trackName"] %></li>
-    <li><%= icon = result["artworkUrl512"] %></li>
-    <li><%= category = result["primaryGenreName"] %></li>
-    <li><%= prince = result["price"] %></li>
-  <% end %>
-  </ul>
+<%= form_tag search_apps_path, method: "get" do %>
+  <%= label_tag :q, "Search for:" %>
+  <%= text_field_tag :q %>
+  <%= submit_tag "Search" %>
 <% end %>

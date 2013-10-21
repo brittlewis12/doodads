@@ -9,17 +9,18 @@ class AppsController < ApplicationController
     else
       query = params[:q].gsub(" ","+")
       response = HTTParty.get("https://itunes.apple.com/search?term=#{query}&entity=software&limit=10")
+      parsed = JSON.parse(response)
 
-      if response["resultCount"] == 0
+      if parsed["resultCount"] == 0
         @results = nil
       else
         @results = []
-        response["results"].each do |result|
+        parsed["results"].each do |result|
           @results << result
         end
       end
 
-      render :search
+      render :search_results
     end
   end
 

@@ -3,9 +3,9 @@
 <% else %>
   <ul>
   <% @results.each do |result| %>
-    <li><%= itunes_id = result["trackId"] %></li>
-    <li><%= name = result["trackName"] %></li>
-    <li><%= icon = result["artworkUrl512"] %></li>
+    <% itunes_id = result["trackId"] %>
+    <h3><%= name = result["trackName"] %></h3>
+    <img src="<%= icon = result["artworkUrl512"] %>" style="max-width: 20%">
     <li><%= category = result["primaryGenreName"] %></li>
     <li><%= prince = result["price"] %></li>
     <br/>

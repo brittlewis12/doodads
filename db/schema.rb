@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021195932) do
+ActiveRecord::Schema.define(version: 20131021202615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 20131021195932) do
   end
 
   create_table "screenshots", force: true do |t|
-    t.string  "screenshot_url"
-    t.string  "ipad_screenshot_url"
-    t.integer "app_id",              null: false
+    t.string   "screenshot_url"
+    t.string   "ipad_screenshot_url"
+    t.integer  "app_id",              null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "screenshots", ["app_id"], name: "index_screenshots_on_app_id", using: :btree

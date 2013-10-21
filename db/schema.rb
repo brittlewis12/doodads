@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021190757) do
+ActiveRecord::Schema.define(version: 20131021191812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apps", force: true do |t|
+    t.string   "name",                                                   null: false
+    t.string   "itunes_id",                                              null: false
+    t.string   "itunes_url",                                             null: false
+    t.string   "icon_url",                                               null: false
+    t.string   "developer",                                              null: false
+    t.string   "developer_url",                                          null: false
+    t.decimal  "price",                          precision: 6, scale: 2, null: false
+    t.text     "description",                                            null: false
+    t.decimal  "current_rating",                 precision: 2, scale: 1, null: false
+    t.integer  "current_rating_count",                                   null: false
+    t.decimal  "total_rating",                   precision: 2, scale: 1, null: false
+    t.integer  "total_rating_count",   limit: 8,                         null: false
+    t.string   "category",                                               null: false
+    t.boolean  "game_center_enabled"
+    t.boolean  "is_universal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name",      null: false

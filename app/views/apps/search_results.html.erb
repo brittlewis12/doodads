@@ -4,10 +4,11 @@
   <ul>
   <% @results.each do |result| %>
     <% itunes_id = result["trackId"] %>
-    <h3><%= name = result["trackName"] %></h3>
+    <h3><%= link_to result["trackName"], app_path(itunes_id) %></h3>
+    <!-- ADD BORDER RADIUS | MOVE MAX-WIDTH -->
     <img src="<%= icon = result["artworkUrl512"] %>" style="max-width: 20%">
     <li><%= category = result["primaryGenreName"] %></li>
-    <li><%= prince = result["price"] %></li>
+    <li><%= price = result["price"] %></li>
     <br/>
   <% end %>
   </ul>

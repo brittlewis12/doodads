@@ -1,15 +1,26 @@
-<% if @results.nil? %>
-<p>No results found. Try your search again.</p>
-<% else %>
-  <ul>
-  <% @results.each do |result| %>
-    <% itunes_id = result["trackId"] %>
-    <h3><%= link_to result["trackName"], app_path(itunes_id) %></h3>
-    <!-- ADD BORDER RADIUS | MOVE MAX-WIDTH -->
-    <img src="<%= icon = result["artworkUrl512"] %>" style="max-width: 20%">
-    <li><%= category = result["primaryGenreName"] %></li>
-    <li><%= price = result["price"] %></li>
-    <br/>
+<div class="search-results">
+
+  <h1>Search results</h1>
+
+  <% if @results.nil? %>
+    <p>No results found. Try your search again.</p>
+  <% else %>
+    <% @results.each do |result| %>
+      <% itunes_id = result["trackId"] %>
+      <% app_name = result["trackName"] %>
+      <% price = result["price"] %>
+      <% price = "Free" unless price > 0 %>
+
+      <div class="app-result">
+        <h2><%= link_to app_name, {action: :create, method: :post}, {name: "lookup_id", value: itunes_id} %> — <span class="price"><%= price %></span></h3>
+
+        <img class="icon app-result" src="<%= icon = result["artworkUrl512"] %>" />
+        <ul class="app-result">
+          <li>Category: <%= result["primaryGenreName"] %></li>
+          <br>
+          <li class="description">Description: <%= result["description"][0..250] %>...</li>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
-  </ul>
-<% end %>
+</div>

@@ -11,3 +11,30 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+img.icon {
+  max-width: 15%;
+  border-radius: 18%;
+}
+
+div.app-result {
+  line-height: 1.4;
+  padding-bottom: 20px;
+  padding-left: 40px
+}
+
+img.app-result {
+  display: inline;
+  vertical-align: middle;
+}
+
+ul.app-result {
+  display: inline-block;
+  max-width: 60%;
+  vertical-align: middle;
+}

@@ -45,8 +45,8 @@ class AppsController < ApplicationController
       # @app.total_rating_count = res["userRatingCount"]
       # @app.category = res["primaryGenreName"]
       # @app.game_center_enabled = res["isGameCenterEnabled"]
-      @app.is_universal = res["features"].include?("iosUniversal") if res["features"]
-
+      # @app.is_universal = parsed["results"][0]["features"].include?("iosUniversal") if res["features"]
+      binding.pry
       # Hmmmmm......
       if @app.save
 
@@ -61,7 +61,7 @@ class AppsController < ApplicationController
 
         unless @ipad_screenshot_urls.nil?
           @ipad_screenshot_urls.each do |screenshot|          
-            @app.screenshots.create(ipad_dcreenshot_url: screenshot)
+            @app.screenshots.create(ipad_screenshot_url: screenshot)
           end
         end
         redirect_to app_path(@app)

@@ -13,12 +13,11 @@ class FetchedApp
     price: "price",
     description: "description",
     current_rating: "averageUserRatingForCurrentVersion",
-    current_rating_count: "userRatingCountForCurrentVersion"
-    total_rating: "averageUserRating"
-    total_rating_count: "userRatingCount"
-    category: "primaryGenreName"
-    game_center_enabled: "isGameCenterEnabled"
-    is_universal: "features"
+    current_rating_count: "userRatingCountForCurrentVersion",
+    total_rating: "averageUserRating",
+    total_rating_count: "userRatingCount",
+    category: "primaryGenreName",
+    game_center_enabled: "isGameCenterEnabled",
   }
 
   ATTR_MAP.each do |key, val|
@@ -27,12 +26,16 @@ class FetchedApp
     end
   end
 
+  def is_universal
+    @json_resp["features"] ? @json_resp["features"].include?("iosUniversal") : false
+  end
+
   def to_hash
-    ATTR_MAP.keys.reduce({}) do |hsh, method_name|
-      hsh[k] = self.send(method_name)
+    fetched_hash = ATTR_MAP.keys.reduce({}) do |hsh, method_name|
+      hsh[method_name] = self.send(method_name)
       next hsh
     end
+    fetched_hash[:is_universal] = is_universal
+    fetched_hash
   end
 end
-
-  !!!!@app.is_universal = res["features"].include?("iosUniversal") if res["features"]

@@ -31,25 +31,8 @@ class AppsController < ApplicationController
       # res = parsed["results"][0]
       fetched = FetchedApp.new(parsed)
       @app = App.new(fetched.to_hash)
-      # @app.itunes_id = res["trackId"]
-      # @app.name = res["trackName"]
-      # @app.itunes_url = res["trackViewUrl"]
-      # @app.icon_url = res["artworkUrl512"]
-      # @app.developer = res["artistName"]
-      # @app.developer_url = res["sellerUrl"]
-      # @app.price = res["price"]
-      # @app.description = res["description"]
-      # @app.current_rating = res["averageUserRatingForCurrentVersion"]
-      # @app.current_rating_count = res["userRatingCountForCurrentVersion"]
-      # @app.total_rating = res["averageUserRating"]
-      # @app.total_rating_count = res["userRatingCount"]
-      # @app.category = res["primaryGenreName"]
-      # @app.game_center_enabled = res["isGameCenterEnabled"]
-      # @app.is_universal = parsed["results"][0]["features"].include?("iosUniversal") if res["features"]
-      binding.pry
-      # Hmmmmm......
+      
       if @app.save
-
         @screenshot_urls = res["screenshotUrls"] # enumerate each to screenshots table
         @ipad_screenshot_urls = res["ipadScreenshotUrls"] # enumerate each to screenshots table
 
@@ -92,7 +75,7 @@ class AppsController < ApplicationController
   end
 
   def find_app itunes_id
-    App.find_by(itunes_id: itunes_id)
+    App.find_by itunes_id: itunes_id
   end
 
   def get_app

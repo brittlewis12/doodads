@@ -24,6 +24,10 @@ img.icon {
   border-radius: 18%;
 }
 
+img.screenshot {
+  display: inline;
+}
+
 div.app-result {
   padding-bottom: 20px;
   padding-left: 40px;

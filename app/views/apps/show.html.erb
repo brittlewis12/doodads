@@ -1,21 +1,26 @@
-<h1>@app.name</h1>
+<div class="show-app">
+  <h1>@app.name</h1>
 
- 
-<!-- 
-  @screenshots
-  @app.itunes_id = res["trackId"]
-  @app.name = res["trackName"]
-  @app.itunes_url = res["trackViewUrl"]
-  @app.icon_url = res["artworkUrl512"]
-  @app.developer = res["artistName"]
-  @app.developer_url = res["sellerUrl"]
-  @app.price = res["price"]
-  @app.description = res["description"]
-  @app.current_rating = res["averageUserRatingForCurrentVersion"]
-  @app.current_rating_count = res["userRatingCountForCurrentVersion"]
-  @app.total_rating = res["averageUserRating"]
-  @app.total_rating_count = res["userRatingCount"]
-  @app.category = res["primaryGenreName"]
-  @app.game_center_enabled = res["isGameCenterEnabled"]
-  @app.is_universal = parsed["results"][0]["features"].include?("iosUniversal") if res["features"]
-   -->
+  <img class="icon" src="<%= @app.icon_url %>" />
+
+  <%= @app.price %>
+  <%= @app.category %>
+  <%= @app.description %>
+
+  <% if @app.game_center_enabled %>
+  <% end %>
+
+  <% if @app.is_universal %>
+  <% end %>
+
+  <% @screenshots.each do |screenshot| %>
+    <img class="screenshot" src="<%= screenshot %>">
+  <% end %>
+
+  <%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %>
+  <%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %>
+
+  <%= link_to @app.developer, @app.developer_url %>
+    
+  <%= link_to "View on iTunes", @app.itunes_url %>
+</div>

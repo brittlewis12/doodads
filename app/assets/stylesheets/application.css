@@ -13,8 +13,10 @@
  */
 
 body {
-  font-size: 16px;
   box-sizing: border-box;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4;
 }
 
 img.icon {
@@ -22,10 +24,22 @@ img.icon {
   border-radius: 18%;
 }
 
+form.search {
+
+}
+
 div.app-result {
-  line-height: 1.4;
   padding-bottom: 20px;
-  padding-left: 40px
+  padding-left: 40px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+}
+
+h2.app-result {
+  padding-bottom: .6em;
+  margin-bottom: 0px;
 }
 
 img.app-result {

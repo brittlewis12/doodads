@@ -50,7 +50,9 @@ class AppsController < ApplicationController
     else
     end
 
-    @screenshot_urls = res["screenshotUrls"] # enumerate each to screenshots table
+    @screenshot = Screenshot.new
+
+    @screenshot_url_1 = res["screenshotUrls"] # enumerate each to screenshots table
     @ipad_screenshot_urls = res["ipadScreenshotUrls"] # enumerate each to screenshots table
   end
 

@@ -1,5 +1,7 @@
-<%= form_tag search_apps_path, method: "get" do %>
-  <%= label_tag :q, "Search for:" %>
-  <%= text_field_tag :q %>
+<% fav_apps = ["tweetbot", "perfect weather", "drafts", "editorial", "dots", "instapaper", "seamless", "any.do", "evernote", "vesper", "rdio", "launch center pro", "day one"] %>
+
+<%= form_tag search_apps_path, method: "get", html: {class: "search"} do %>
+  <%= label_tag :q, "Search the iTunes App Store:" %><br/>
+  <%= text_field_tag :q, nil, placeholder: fav_apps.sample %>
   <%= submit_tag "Search" %>
 <% end %>

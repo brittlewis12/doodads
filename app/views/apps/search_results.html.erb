@@ -1,5 +1,4 @@
 <div class="search-results">
-
   <h1>Search results</h1>
 
   <% if @results.nil? %>
@@ -12,13 +11,12 @@
       <% price = "Free" unless price > 0 %>
 
       <div class="app-result">
-        <h2><%= link_to app_name, {action: :create, method: :post}, {name: "lookup_id", value: itunes_id} %> — <span class="price"><%= price %></span></h3>
+        <h2 class="app-result"><%= link_to app_name, {action: :create, method: :post}, {name: "lookup_id", value: itunes_id} %> — <span class="price"><%= price %></span></h3>
 
         <img class="icon app-result" src="<%= icon = result["artworkUrl512"] %>" />
         <ul class="app-result">
-          <li>Category: <%= result["primaryGenreName"] %></li>
-          <br>
-          <li class="description">Description: <%= result["description"][0..250] %>...</li>
+          <li><strong>Category:</strong> <%= result["primaryGenreName"] %></li>
+          <li class="description"><strong>Description:</strong> <%= result["description"][0..250] %>...</li>
         </ul>
       </div>
     <% end %>

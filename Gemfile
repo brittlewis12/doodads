@@ -50,5 +50,5 @@ gem 'json'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Use rails-pry
-gem 'rails-pry', group: [:development, :test]
+# Use pry-rails
+gem 'pry-rails', group: [:development, :test]

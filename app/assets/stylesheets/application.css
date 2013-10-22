@@ -24,13 +24,35 @@ img.icon {
   border-radius: 18%;
 }
 
-form.search {
-
-}
-
 div.app-result {
   padding-bottom: 20px;
   padding-left: 40px;
+}
+
+div.app-result input {
+  background: transparent;
+  border: 0;
+  cursor:pointer;
+  margin: 0;
+  padding: 0;
+  color: #0000ff;
+  text-decoration: underline;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+div.app-result input:visited {
+  color: #505abc;
+}
+
+div.app-result input:hover {
+  color: #1d60ff;
+  text-decoration: none;
+}
+
+div.app-result input:active {
+  color: #12eb87;
 }
 
 h1 {

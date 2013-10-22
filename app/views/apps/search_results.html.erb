@@ -8,10 +8,16 @@
       <% itunes_id = result["trackId"] %>
       <% app_name = result["trackName"] %>
       <% price = result["price"] %>
-      <% price = "Free" unless price > 0 %>
+      <% price > 0 ? formatted_price = "$#{price}" : formatted_price = "Free" %>
 
       <div class="app-result">
-        <h2 class="app-result"><%= link_to app_name, {action: :create, method: :post}, {name: "lookup_id", value: itunes_id} %> — <span class="price"><%= price %></span></h3>
+        <h2 class="app-result">
+          <%= form_tag apps_path, method: :post, id: "add-app" do %>
+            <%= hidden_field_tag :lookup_id, itunes_id %>
+            <%= submit_tag app_name %>
+          <% end %>
+          — <span class="price"><%= formatted_price %></span>
+        </h2>
 
         <img class="icon app-result" src="<%= icon = result["artworkUrl512"] %>" />
         <ul class="app-result">

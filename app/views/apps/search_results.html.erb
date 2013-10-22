@@ -8,7 +8,7 @@
       <% itunes_id = result["trackId"] %>
       <% app_name = result["trackName"] %>
       <% price = result["price"] %>
-      <% price > 0 ? formatted_price = "$#{price}" : formatted_price = "Free" %>
+      <% formatted_price = (price > 0 ? "$#{price}" : "Free") %>
 
       <div class="app-result">
         <h2 class="app-result">

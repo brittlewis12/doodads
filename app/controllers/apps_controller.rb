@@ -25,55 +25,50 @@ class AppsController < ApplicationController
 
   def create
     lookup_id = params[:lookup_id]
-    if !find_app(lookup_id).exists?
+    if find_app(lookup_id).nil?
       response = HTTParty.get itunes_lookup(lookup_id)
       parsed = JSON.parse response
-      res = parsed["results"][0]
-
-      @app = App.new
-      @app.itunes_id = res["trackId"]
-      @app.name = res["trackName"]
-      @app.itunes_url = res["trackViewUrl"]
-      @app.icon_url = res["artworkUrl512"]
-      @app.developer = res["artistName"]
-      @app.developer_url = res["sellerUrl"]
-      @app.price = res["price"]
-      @app.description = res["description"]
-      @app.current_rating = res["averageUserRatingForCurrentVersion"]
-      @app.current_rating_count = res["userRatingCountForCurrentVersion"]
-      @app.total_rating = res["averageUserRating"]
-      @app.total_rating_count = res["userRatingCount"]
-      @app.category = res["primaryGenreName"]
-      @app.game_center_enabled = res["isGameCenterEnabled"]
+      # res = parsed["results"][0]
+      fetched = FetchedApp.new(parsed)
+      @app = App.new(fetched.to_hash)
+      # @app.itunes_id = res["trackId"]
+      # @app.name = res["trackName"]
+      # @app.itunes_url = res["trackViewUrl"]
+      # @app.icon_url = res["artworkUrl512"]
+      # @app.developer = res["artistName"]
+      # @app.developer_url = res["sellerUrl"]
+      # @app.price = res["price"]
+      # @app.description = res["description"]
+      # @app.current_rating = res["averageUserRatingForCurrentVersion"]
+      # @app.current_rating_count = res["userRatingCountForCurrentVersion"]
+      # @app.total_rating = res["averageUserRating"]
+      # @app.total_rating_count = res["userRatingCount"]
+      # @app.category = res["primaryGenreName"]
+      # @app.game_center_enabled = res["isGameCenterEnabled"]
       @app.is_universal = res["features"].include?("iosUniversal") if res["features"]
 
-      binding.pry
-
       # Hmmmmm......
-      # if @app.save
+      if @app.save
 
-      #   @screenshot_url = res["screenshotUrls"] # enumerate each to screenshots table
-      #   @ipad_screenshot_urls = res["ipadScreenshotUrls"] # enumerate each to screenshots table
+        @screenshot_urls = res["screenshotUrls"] # enumerate each to screenshots table
+        @ipad_screenshot_urls = res["ipadScreenshotUrls"] # enumerate each to screenshots table
 
-        # if !@screenshot_url.nil?
-        #   @screenshot_url.each do |screenshot|
-        #   @screenshot = Screenshot.new
-        #   @screenshot.screenshot_url = screenshot
-        #   @screenshot.save
-        #   end
-        # end
+        unless @screenshot_urls.nil?
+          @screenshot_urls.each do |screenshot|
+            @app.screenshots.create(screenshot_url: screenshot)
+          end
+        end
 
-        # if !@ipad_screenshot_url.nil?
-        #   @ipad_screenshot_url.each do |screenshot|
-        #     @screenshot = Screenshot.new
-        #     @screenshot.ipad_screenshot_url = screenshot
-        #     @screenshot.save
-        #   end
-        # end
-      #   redirect_to app_path(@app)
-      # else
-      #   "something went wrong -- sorry, yo."
-      # end
+        unless @ipad_screenshot_urls.nil?
+          @ipad_screenshot_urls.each do |screenshot|          
+            @app.screenshots.create(ipad_dcreenshot_url: screenshot)
+          end
+        end
+        redirect_to app_path(@app)
+      else
+        # "something went wrong -- sorry, yo."
+        render :search
+      end
     else
       @app = find_app lookup_id
       redirect_to app_path(@app)

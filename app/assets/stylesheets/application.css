@@ -104,6 +104,8 @@ div.recent_search {
 
 div.recent_search ul, img {
   display: inline-block;
+  margin-bottom: 3%;
+  vertical-align: middle;
 }
 
 div.app-result {

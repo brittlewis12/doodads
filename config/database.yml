@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: doodads_test
   pool: 5
-  username: doodads
+  username: brittlewis
   password:
 
 production:

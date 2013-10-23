@@ -25,14 +25,19 @@ class AppsController < ApplicationController
 
   def create
     lookup_id = params[:lookup_id]
+
+    binding.pry
+
     if find_app(lookup_id).nil?
       response = HTTParty.get itunes_lookup(lookup_id)
       parsed = JSON.parse response
-      # res = parsed["results"][0]
       fetched = FetchedApp.new(parsed)
       @app = App.new(fetched.to_hash)
-      
+
+      binding.pry
+
       if @app.save
+        res = parsed["results"][0]
         @screenshot_urls = res["screenshotUrls"] # enumerate each to screenshots table
         @ipad_screenshot_urls = res["ipadScreenshotUrls"] # enumerate each to screenshots table
 
@@ -47,13 +52,16 @@ class AppsController < ApplicationController
             @app.screenshots.create(ipad_screenshot_url: screenshot)
           end
         end
+
         redirect_to app_path(@app)
       else
-        # "something went wrong -- sorry, yo."
+        "something went wrong -- sorry, yo."
+        binding.pry
         render :search
       end
     else
       @app = find_app lookup_id
+      binding.pry
       redirect_to app_path(@app)
     end
   end

@@ -8,17 +8,19 @@
 </head>
 <body>
   <header>
-      <span class="logo"><%= link_to "Doodads", root_path %></span>
-      <ul>
-        <div class="links">
-          <li><%= link_to "Create an account", new_user_path %></li>
-          <li><%= link_to "Sign in", new_session_path %></li>
-          <li><%= link_to "Sign out", session_path, method: "delete" %></li>
-          <li><%= link_to "My Doodads account", user_path(current_user) %></li>
-          <li><%= link_to "Find Apps", apps_path %></li>
-          <li> </li>
-        </div>
-      </ul>
+      <div class="logo"><%= link_to "Doodads", root_path %></div>
+      <div class="links">  
+        <ul>
+          <% if !logged_in? %>
+            <li><%= link_to "Create an account", new_user_path %></li>
+            <li><%= link_to "Sign in", new_session_path %></li>
+          <% else %>
+            <li><%= link_to "Sign out", session_path, method: "delete" %></li>
+            <li><%= link_to "My Doodads account", user_path(current_user) %></li>
+          <% end %>
+          <li><%= link_to "Find Apps ", apps_path %></li>
+        </ul>
+      </div>
   </header>
   <div class="container">
     <%= yield %>

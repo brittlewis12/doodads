@@ -21,12 +21,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+    # change email address, password, unfollow apps, etc
   end
 
   def update
+    # receives changes from users#edit, and commits them to the db
   end
 
   def destroy
+    # deletes a user account.
+    # reminder -- that fancy confirm js option!
   end
 
   private

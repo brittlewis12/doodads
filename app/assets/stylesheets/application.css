@@ -39,13 +39,12 @@ header li {
 
 }
 
-span.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
+div.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
   float: left;
- /* display: inline;*/
   margin-left: 5%;
   margin-top: 1%;
   font-size: 1.2em;
-  color: #888;
+  color: #555;
   text-decoration: none;
 
 }
@@ -54,13 +53,15 @@ div.links {
   float: right;
   margin-top: 2%;
   margin-right: 5%;
+  white-space: nowrap;
+
 }
 
 div.links li {
   padding-right: 1%;
 }
 
-span.logo a:hover {
+div.logo a:hover {
   text-decoration: underline;
 }
 

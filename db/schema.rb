@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20131023190419) do
   end
 
   create_table "apps_users", force: true do |t|
-    t.integer "app_id"
-    t.integer "user_id"
+    t.integer "app_id",  null: false
+    t.integer "user_id", null: false
   end
 
   create_table "screenshots", force: true do |t|

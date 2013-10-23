@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <header>
+    <ul>
+      <li>doodads | </li>
+      <li>Sign in | </li>      
+      <li><%= link_to "Create an account", new_user_path %></li>
+    </ul>
+  </header>
 <%= yield %>
 
 </body>

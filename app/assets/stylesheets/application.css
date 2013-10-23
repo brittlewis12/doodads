@@ -26,6 +26,14 @@ body {
   padding: 0;
 }
 
+header{
+  display: inline;
+}
+
+header ul, header li{
+  display: inline;
+}
+
 img.icon {
   max-width: 15%;
   border-radius: 18%;
@@ -37,10 +45,22 @@ img.screenshot {
   /*float: left;*/
 }
 
+form.user {
+  list-style-type: none;
+}
+
 div.show-app {
   width: auto;
   margin: 0 auto;
   text-align: center;
+}
+
+div.recent_search {
+  display: inline;
+}
+
+div.recent_search ul, img {
+  display: inline-block;
 }
 
 div.app-result {
@@ -77,7 +97,7 @@ div.app-result input:active {
 h1 {
   font-family: Georgia, serif;
   margin: 0;
-  padding: 15px, 0, 0, 0;
+  padding: 15px 0 0 0;
 }
 
 h2.app-result {

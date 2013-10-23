@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   # show fun stuff re: apps. hot list, recently updated...
   def index
-    @apps = App.all
+    @apps = App.all.order("updated_at DESC").limit 5
   end
 
   def search

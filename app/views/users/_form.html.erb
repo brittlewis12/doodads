@@ -1,0 +1,27 @@
+<% unless @user.errors.none? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+<%= form_for @user, html: {class: "user"} do |f| %>
+  <li><%= f.label :first_name %></li>
+  <li><%= f.text_field :first_name %></li>
+
+  <li><%= f.label :last_name %></li>
+  <li><%= f.text_field :last_name %></li>
+
+  <li><%= f.label :username %></li>
+  <li><%= f.text_field :username %></li>
+
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
+
+  <li><%= f.label :password %></li>
+  <li><%= f.password_field :password %></li>
+
+  <li><%= f.label :password_confirmation %></li>
+  <li><%= f.password_field :password_confirmation %></li>
+
+  <%= f.submit %>
+<% end %>

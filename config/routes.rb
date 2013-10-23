@@ -6,5 +6,6 @@ Doodads::Application.routes.draw do
       get 'search'
     end
   end
-  # resources :users, only [:new, :create, :show]
+
+  resources :users
 end

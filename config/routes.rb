@@ -8,4 +8,6 @@ Doodads::Application.routes.draw do
   end
 
   resources :users
+
+  resources :session, only: [:new, :create, :destroy]
 end

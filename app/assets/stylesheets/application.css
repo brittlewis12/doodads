@@ -117,11 +117,6 @@ ul.app-result {
   vertical-align: middle;
 }
 
-/*div.app-info {
-  display: inline;
-  margin: 0 auto;
-}*/
-
 ul.app-info {
   display: inline-block;
   max-width: 60%;

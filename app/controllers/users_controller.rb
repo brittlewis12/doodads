@@ -1,20 +1,22 @@
 class UsersController < ApplicationController
+  
+  before_action :authenticated!, :get_user, :authorized!, except: [:new, :create]
+
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new user_params
 
     if @user.save
-      redirect_to user_path @user
+      redirect_to user_path(@user)
     else
       render :new
     end
   end
 
   def show
-    @user = get_user
   end
 
   def edit
@@ -33,19 +35,13 @@ class UsersController < ApplicationController
   end
 
   def get_user
-    User.find(params[:id])
-  end
-
-  def logged_in?
-  end
-
-  def authenticated!
-  end
-
-  def set_user
+    @user = User.find params[:id]
   end
 
   def authorized!
+    unless @user.id == session[:user_id]
+      redirect_to user_path(session[:user_id])
+    end
   end
 
 end

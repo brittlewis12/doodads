@@ -12,11 +12,18 @@
  *= require_tree .
  */
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   box-sizing: border-box;
   font-size: 16px;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
+  margin: 0;
+  padding: 0;
 }
 
 img.icon {
@@ -25,7 +32,15 @@ img.icon {
 }
 
 img.screenshot {
+  max-width: 15%;
   display: inline;
+  /*float: left;*/
+}
+
+div.show-app {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 
 div.app-result {
@@ -61,11 +76,14 @@ div.app-result input:active {
 
 h1 {
   font-family: Georgia, serif;
+  margin: 0;
+  padding: 15px, 0, 0, 0;
 }
 
 h2.app-result {
   padding-bottom: .6em;
   margin-bottom: 0px;
+  font-size: 1.3em;
 }
 
 img.app-result {
@@ -77,4 +95,19 @@ ul.app-result {
   display: inline-block;
   max-width: 60%;
   vertical-align: middle;
+}
+
+/*div.app-info {
+  display: inline;
+  margin: 0 auto;
+}*/
+
+ul.app-info {
+  display: inline-block;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+div.footer-links {
+  text-align: center;
 }

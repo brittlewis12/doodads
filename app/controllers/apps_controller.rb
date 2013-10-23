@@ -1,6 +1,8 @@
 class AppsController < ApplicationController
   # show fun stuff re: apps. hot list, recently updated...
-  def index; end
+  def index
+    @apps = App.all
+  end
 
   def search
     if params[:q].nil?
@@ -26,15 +28,11 @@ class AppsController < ApplicationController
   def create
     lookup_id = params[:lookup_id]
 
-    binding.pry
-
     if find_app(lookup_id).nil?
       response = HTTParty.get itunes_lookup(lookup_id)
       parsed = JSON.parse response
       fetched = FetchedApp.new(parsed)
       @app = App.new(fetched.to_hash)
-
-      binding.pry
 
       if @app.save
         res = parsed["results"][0]
@@ -61,7 +59,6 @@ class AppsController < ApplicationController
       end
     else
       @app = find_app lookup_id
-      binding.pry
       redirect_to app_path(@app)
     end
   end

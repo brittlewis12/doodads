@@ -35,7 +35,6 @@ class FetchedApp
       hsh[method_name] = self.send(method_name)
       next hsh
     end
-    binding.pry
     fetched_hash[:is_universal] = is_universal
     fetched_hash
   end

@@ -2,19 +2,26 @@
 <html>
 <head>
   <title>Doodads</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
-    <ul>
-      <li>doodads | </li>
-      <li><%= link to (logged_in? ? "Sign out | " : "Sign in | "), edit_user_path @current_user %></li>      
-      <li><%= link_to "Create an account", new_user_path %></li>
-    </ul>
+      <span class="logo"><%= link_to "Doodads", root_path %></span>
+      <ul>
+        <div class="links">
+          <li><%= link_to "Create an account", new_user_path %></li>
+          <li><%= link_to "Sign in", new_session_path %></li>
+          <li><%= link_to "Sign out", session_path, method: "delete" %></li>
+          <li><%= link_to "My Doodads account", user_path(current_user) %></li>
+          <li><%= link_to "Search Apps ", search_apps_path %></li>
+          <li> </li>
+        </div>
+      </ul>
   </header>
-<%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

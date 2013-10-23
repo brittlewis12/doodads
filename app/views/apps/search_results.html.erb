@@ -2,7 +2,7 @@
   <h1>Search results</h1>
 
   <% if @results.nil? %>
-    <p>No results found. Try your search again.</p>
+    <p>No results found. Try your <%= link_to "search again.", search_apps_path %></p>
   <% else %>
     <% @results.each do |result| %>
       <% itunes_id = result["trackId"] %>
@@ -12,10 +12,7 @@
 
       <div class="app-result">
         <h2 class="app-result">
-          <%= form_tag apps_path, method: :post, id: "add-app" do %>
-            <%= hidden_field_tag :lookup_id, itunes_id %>
-            <%= submit_tag app_name %>
-          <% end %>
+          <%= button_to app_name, action: "create", lookup_id: itunes_id %>
           — <span class="price"><%= formatted_price %></span>
         </h2>
 

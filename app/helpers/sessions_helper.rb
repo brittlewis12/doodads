@@ -1,9 +1,9 @@
-module SessionHelper
+module SessionsHelper
   def logged_in?
     session[:user_id].present?
   end
 
-  def log_in!
+  def log_in!(user)
     session[:user_id] = user.id
   end
 

@@ -30,8 +30,51 @@ header{
   display: inline;
 }
 
-header ul, header li{
+header ul {
+  list-style-type: none;
+}
+
+header li {
   display: inline;
+
+}
+
+span.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
+  float: left;
+ /* display: inline;*/
+  margin-left: 5%;
+  margin-top: 1%;
+  font-size: 1.2em;
+  color: #888;
+  text-decoration: none;
+
+}
+
+div.links {
+  float: right;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+
+div.links li {
+  padding-right: 1%;
+}
+
+span.logo a:hover {
+  text-decoration: underline;
+}
+
+div.container {
+  padding-top: 10px;
+  clear: both;
+  margin: 0 auto;
+}
+
+div.splash {
+  width: 75%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
 img.icon {
@@ -45,7 +88,7 @@ img.screenshot {
   /*float: left;*/
 }
 
-form.user {
+form.user, form.session {
   list-style-type: none;
 }
 

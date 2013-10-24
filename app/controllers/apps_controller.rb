@@ -32,8 +32,8 @@ class AppsController < ApplicationController
     if find_app(lookup_id).nil?
       response = HTTParty.get itunes_lookup(lookup_id)
       parsed = JSON.parse response
-      fetched = FetchedApp.new(parsed)
-      @app = App.new(fetched.to_hash)
+      fetched = FetchedApp.new parsed
+      @app = App.new fetched.to_hash
 
       if @app.save
         res = parsed["results"][0]
@@ -65,9 +65,10 @@ class AppsController < ApplicationController
   end
 
   def follow
-    current_user
-    @app = get_app
-    binding.pry
+    follow = Follow.where(user_id: current_user.id, app_id: get_app.id).first_or_initialize
+
+    follow.save
+    redirect_to app_path(@app.id)
   end
 
   def show

@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :follows
   has_many :apps, through: :follows
+  has_many :doodads
+  has_many :apps, through: :doodads
 end

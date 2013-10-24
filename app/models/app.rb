@@ -7,4 +7,6 @@ class App < ActiveRecord::Base
 
   has_many :follows
   has_many :users, through: :follows
+  has_many :doodads
+  has_many :users, through: :doodads
 end

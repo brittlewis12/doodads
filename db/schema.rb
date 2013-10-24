@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024143959) do
+ActiveRecord::Schema.define(version: 20131024193346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20131024143959) do
     t.string   "developer",                                              null: false
     t.string   "developer_url"
     t.decimal  "price",                          precision: 6, scale: 2, null: false
-    t.text     "version",                                                null: false
+    t.string   "version",                                                null: false
     t.text     "description",                                            null: false
     t.decimal  "current_rating",                 precision: 2, scale: 1, null: false
     t.integer  "current_rating_count",                                   null: false
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20131024143959) do
     t.string   "category",                                               null: false
     t.boolean  "game_center_enabled"
     t.boolean  "is_universal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "doodads", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.integer  "apps_id",     null: false
+    t.integer  "users_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

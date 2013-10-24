@@ -1,39 +1,41 @@
-<div class="show-app">
+<div class="showcase">
   <h1><%= @app.name %></h1>
-
   <img class="icon" src="<%= @app.icon_url %>" /><br/>
-  <div class="app-info">
-    <ul class="app-info">
-      <% formatted_price = (@app.price > 0 ? "$#{@app.price}" : "Free") %>  
-      <li><%= formatted_price %></li>
-      <li><%= @app.category %></li>
-      <li class="description"><%= @app.description %></li>
-
-    </ul>
-
+  <ul class="app-info">
+    <% formatted_price = (@app.price > 0 ? "$#{@app.price}" : "Free") %>  
+    <li><%= formatted_price %></li>
+    <li>Category: <%= @app.category %></li>
     <% if @app.game_center_enabled %>
-      <p>with Game Center integration</p>
+      <li>Game Center integration</li>
     <% end %>
-
     <% if @app.is_universal %>
-      <p>Universal (made for iPhone & iPad)</p>
+      <li>Universal</li>
     <% end %>
+  </ul>
 
-    <div class="screenshots">
-      <% @screenshots.each do |screenshot| %>
-        <% if screenshot.screenshot_url %>
-          <img class="screenshot" src="<%= screenshot.screenshot_url %>">
-        <% elsif screenshot.ipad_screenshot_url %>
-          <img class="screenshot" src="<%= screenshot.ipad_screenshot_url %>">
-        <% end %>
+  <% if session[:user_id].present? %>
+    <!-- LATER: if followed already, say unfollow -->
+    <%= button_to "follow", "#" %>
+  <% end %>
+
+</div>
+<div class="app-info">
+  <p class="description"><%= @app.description %></p>
+
+  <div class="screenshots">
+    <% @screenshots.each do |screenshot| %>
+      <% if screenshot.screenshot_url %>
+        <img class="screenshot" src="<%= screenshot.screenshot_url %>">
+      <% elsif screenshot.ipad_screenshot_url %>
+        <img class="screenshot" src="<%= screenshot.ipad_screenshot_url %>">
       <% end %>
-    </div>
-
-    <div><%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %><br/>
-    <%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %></div>
-
-    <div class="footer-links"><%= link_to @app.developer, @app.developer_url %> | 
-      
-    <%= link_to "View on iTunes", @app.itunes_url %></div>
+    <% end %>
   </div>
+
+  <div class="ratings"><%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %><br/>
+  <%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %></div>
+
+  <div class="footer-links"><%= link_to @app.developer, @app.developer_url %> | 
+    
+  <%= link_to "View on iTunes", @app.itunes_url %></div>
 </div>

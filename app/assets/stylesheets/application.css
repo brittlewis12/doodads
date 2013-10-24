@@ -20,6 +20,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 16px;
+  color: #444;
   font-family: Helvetica, sans-serif;
   line-height: 1.4;
   margin: 0;
@@ -58,7 +59,7 @@ div.links {
 }
 
 div.links li {
-  padding-right: 1%;
+  padding-right: 2%;
 }
 
 div.logo a:hover {
@@ -93,10 +94,10 @@ form.user, form.session {
   list-style-type: none;
 }
 
-div.show-app {
+div.app-info {
+  padding-left: 10%;
   width: auto;
   margin: 0 auto;
-  text-align: center;
 }
 
 div.recent_search {
@@ -146,6 +147,13 @@ h1 {
   padding: 15px 0 0 0;
 }
 
+div.showcase {
+  text-align: center;
+}
+div.showcase img {
+  margin-bottom: 0;
+}
+
 h2.app-result {
   padding-bottom: .6em;
   margin-bottom: 0px;
@@ -164,9 +172,31 @@ ul.app-result {
 }
 
 ul.app-info {
-  display: inline-block;
-  max-width: 60%;
-  margin: 0 auto;
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+div.showcase input {
+  background: #333;
+  border: 0;
+  cursor:pointer;
+  margin: 0;
+  padding: .5em 1em;
+  color: #eee;
+  border-radius: 50% 50% 50% 50%;
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+}
+
+p.description {
+  max-width: 80%;
+  margin-left: 5%;
+}
+
+div.ratings {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 div.footer-links {

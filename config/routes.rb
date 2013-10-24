@@ -2,9 +2,8 @@ Doodads::Application.routes.draw do
   root 'splash#index'
 
   resources :apps, only: [:index, :create, :show] do
-    collection do
-      get 'search'
-    end
+    post :follow, on: :member
+    get :search, on: :collection
   end
 
   resources :users

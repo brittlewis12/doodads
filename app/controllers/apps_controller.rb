@@ -1,4 +1,5 @@
 class AppsController < ApplicationController
+  helper :Sessions
   # show fun stuff re: apps. hot list, recently updated...
   def index
     @apps = App.all.order("updated_at DESC").limit 5

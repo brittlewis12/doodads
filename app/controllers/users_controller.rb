@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # get current_user.apps && current_user.doodads
+    get_user
+    binding.pry # && current_user.doodads
   end
 
   def edit

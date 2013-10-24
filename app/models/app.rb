@@ -6,7 +6,8 @@ class App < ActiveRecord::Base
   has_many :screenshots
 
   has_many :follows
-  has_many :users, through: :follows
+  has_many :followers, through: :follows, source: :user
+
   has_many :doodads
-  has_many :users, through: :doodads
+  has_many :doodad_makers, through: :doodads, source: :user
 end

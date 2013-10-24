@@ -217,6 +217,27 @@ div.app-result input:active {
   color: #12eb87;
 }
 
+div.apps-index p.link {
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 0;
+}
+
+div.apps-index a.search-link {
+  padding: 1% 2% 1% 3.5%;
+  background-color: #ddd;
+  border-radius: 35px;
+}
+
+.magnifying-glass {
+  position: relative;
+  left: 3%;
+  width: 1.75%;
+  margin: 0;
+  padding: 0;
+  padding-bottom: .5%;
+}
+
 h1 {
   font-family: Georgia, serif;
   margin: 0;

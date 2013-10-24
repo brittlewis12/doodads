@@ -1,7 +1,7 @@
 <h1><%= @user.username %>'s Account</h1>
 
 <h3 class="apps">My Apps:</h3>
-  <% if @user.apps.count == 0 %>
+  <% if @user.apps.length == 0 %>
     <p>You don't haven't followed any apps yet. <%= link_to "Get started now!", search_apps_path %> </p>
   <% else %>
     <ul>

@@ -8,6 +8,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :developer, null: false
       t.string :developer_url, null: false
       t.decimal :price, scale: 2, precision: 6, null: false
+      t.text :version, null: false
       t.text :description, null: false
       t.decimal :current_rating, scale: 1, precision: 2, null: false
       t.integer :current_rating_count, null: false

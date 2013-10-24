@@ -64,6 +64,12 @@ class AppsController < ApplicationController
     end
   end
 
+  def follow
+    current_user
+    @app = get_app
+    binding.pry
+  end
+
   def show
     @app = get_app
     @screenshots = get_screenshots

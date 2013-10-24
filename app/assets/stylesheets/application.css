@@ -43,7 +43,7 @@ header li {
 div.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
   float: left;
   margin-left: 5%;
-  margin-top: 1%;
+  margin-top: 2%;
   font-size: 1.2em;
   color: #555;
   text-decoration: none;
@@ -52,7 +52,7 @@ div.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
 
 div.links {
   float: right;
-  margin-top: 2%;
+  margin-top: 1%;
   margin-right: 5%;
   white-space: nowrap;
 

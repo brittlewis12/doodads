@@ -15,7 +15,7 @@
 
   <% if session[:user_id].present? %>
     <!-- LATER: if followed already, say unfollow -->
-    <%= button_to "follow", "#" %>
+    <%= button_to "follow", action: :follow %>
   <% end %>
 
 </div>

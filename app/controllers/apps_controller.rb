@@ -72,8 +72,8 @@ class AppsController < ApplicationController
   end
 
   def show
-    @app = get_app
-    @screenshots = get_screenshots
+    get_app
+    get_screenshots
   end
 
   private
@@ -92,10 +92,10 @@ class AppsController < ApplicationController
   end
 
   def get_app
-    App.find params[:id]
+    @app = App.find params[:id]
   end
 
   def get_screenshots
-    Screenshot.where app_id: @app.id
+    @screenshots = Screenshot.where app_id: @app.id
   end
 end

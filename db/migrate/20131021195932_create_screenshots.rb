@@ -4,6 +4,8 @@ class CreateScreenshots < ActiveRecord::Migration
       t.string :screenshot_url
       t.string :ipad_screenshot_url
       t.references :app, null: false, index: true
+
+      t.timestamps
     end
 
   reversible do |dir|

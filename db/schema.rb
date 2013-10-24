@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20131024022635) do
   end
 
   create_table "follows", force: true do |t|
-    t.integer  "apps_id",                   null: false
-    t.integer  "users_id",                  null: false
+    t.integer  "app_id",                    null: false
+    t.integer  "user_id",                   null: false
     t.boolean  "notify",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"

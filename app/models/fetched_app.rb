@@ -12,7 +12,7 @@ class FetchedApp
     developer_url: "sellerUrl",
     price: "price",
     description: "description",
-    version: "version"
+    version: "version",
     current_rating: "averageUserRatingForCurrentVersion",
     current_rating_count: "userRatingCountForCurrentVersion",
     total_rating: "averageUserRating",

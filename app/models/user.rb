@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :follows
-  has_many :followed_apps, through: :follows, source: :apps
+  has_many :followed_apps, through: :follows, source: :app
 
   has_many :doodads
-  has_many :doodaded_apps, through: :doodads, source: :apps
+  has_many :doodaded_apps, through: :doodads, source: :app
 end

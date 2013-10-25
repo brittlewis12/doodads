@@ -13,7 +13,22 @@
   <% end %>
 
   <h3 class="doodads">My Doodads:</h3>
-  <p>You haven't created any Doodads yet. <%= link_to "Find an app", search_apps_path %> to get started!</p>
+  <% unless @app.doodads.count > 0 %>
+    <p>There are no Doodads for this app yet. Have a great idea? <%= link_to "Be the first!", new_doodad_path %></p>
+  <% else %>
+    <ul>
+      <% @user.doodads.each do |doodad| %>
+        <li>
+          <h3><%= doodad.title %></h3>
+          <ul class="doodad-details">
+            <li>Submitted by you!</li>
+            <li>Doodad for <%= doodad.app.name %></li>
+            <li><%= doodad.description %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <p>Want to learn a little more about Doodads? <a href="#">Eventual link here</a> to explore.</p>
 </div>

@@ -107,6 +107,45 @@ div.splash {
   text-align: center;
 }
 
+div.splash h1 {
+  padding-top: 2%;
+}
+
+div.splash h3 {
+  margin-bottom: 0;
+}
+
+div.splash p {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+div.splash span {
+  width: 2%;
+}
+
+div.splash a.onboard {
+  position: relative;
+  top: 45px;
+  font-size: 2em;
+  color: rgba(255,255,255,.9);
+  background-color: rgba(118,142,196,.8);
+  padding: 2% 3%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+div.splash a.onboard:hover{
+  color: rgba(221,85,102,.9);
+  background-color: rgba(118,142,196,.4);
+}
+
+ul.splash {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
 img.icon {
   max-width: 15%;
   border-radius: 18%;
@@ -116,7 +155,6 @@ img.icon {
 img.screenshot {
   max-width: 15%;
   display: inline;
-  /*float: left;*/
 }
 
 form.user, form.session {

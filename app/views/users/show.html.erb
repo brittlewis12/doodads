@@ -13,8 +13,8 @@
   <% end %>
 
   <h3 class="doodads">My Doodads:</h3>
-  <% unless @app.doodads.count > 0 %>
-    <p>There are no Doodads for this app yet. Have a great idea? <%= link_to "Be the first!", new_doodad_path %></p>
+  <% unless @user.doodads.count > 0 %>
+    <p>You haven't created any Doodads yet. Have a great idea? Find an app and <%= link_to "get started now!", search_apps_path %></p>
   <% else %>
     <ul>
       <% @user.doodads.each do |doodad| %>

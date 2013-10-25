@@ -36,6 +36,6 @@
 <div class="ratings"><%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %><br/>
 <%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %></div>
 
-<div class="footer-links"><%= link_to @app.developer, @app.developer_url %> | 
+<div class="footer-links"><%= link_to @app.developer, @app.developer_url, target: "_blank" %> | 
   
-<%= link_to "View on iTunes", @app.itunes_url %></div>
+<%= link_to "View on iTunes", @app.itunes_url, target: "_blank" %></div>

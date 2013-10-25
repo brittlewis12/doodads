@@ -7,6 +7,8 @@ Doodads are app features. iOS only, for now.
 
 Search for and follow apps, submit doodad ideas, and more to come.
 
+Check it out on [heroku](http://addadoodad.herokuapp.com/ "Doodads")!
+
 ## Why did you make it?
 ### GA WDI NYC: Project 1 
 

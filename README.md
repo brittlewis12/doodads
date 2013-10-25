@@ -8,7 +8,7 @@ Doodads are app features. iOS only, for now.
 Search for and follow apps, submit doodad ideas, and more to come.
 
 ## Why did you make it?
-### GA NYC WDI project 1. 
+### GA WDI NYC: Project 1 
 
 This project is the culmination of the first four weeks of General Assembly's Web Development Immersive course, after one week's exposure to Rails. We spent one week reviewing and fleshing out our understanding of Ruby; two weeks building simple scripts and sinatra web apps; and a one week introduction to Rails.
 

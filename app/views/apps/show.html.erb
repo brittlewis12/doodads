@@ -23,12 +23,17 @@
 <div class="app-info">
   <p class="description"><%= @app.description %></p>
 
-  <div class="screenshots">
+  <div class="iphone-screenshots">
     <% @screenshots.each do |screenshot| %>
       <% if screenshot.screenshot_url %>
-        <img class="screenshot" src="<%= screenshot.screenshot_url %>">
-      <% elsif screenshot.ipad_screenshot_url %>
-        <img class="screenshot" src="<%= screenshot.ipad_screenshot_url %>">
+        <img class="iphone-screenshot" src="<%= screenshot.screenshot_url %>">
+      <% end %>
+    <% end %>
+  </div>
+  <div class="ipad-screenshots">
+    <% @screenshots.each do |screenshot| %>
+      <% if screenshot.ipad_screenshot_url %>
+        <img class="ipad-screenshot" src="<%= screenshot.ipad_screenshot_url %>">
       <% end %>
     <% end %>
   </div>

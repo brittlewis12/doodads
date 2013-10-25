@@ -152,8 +152,13 @@ img.icon {
   border: solid 1px #ddd;
 }
 
-img.screenshot {
+img.iphone-screenshot {
   max-width: 15%;
+  display: inline;
+}
+
+img.ipad-screenshot {
+  max-width: 30%;
   display: inline;
 }
 

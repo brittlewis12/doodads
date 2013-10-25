@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024193346) do
+ActiveRecord::Schema.define(version: 20131025050738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20131024193346) do
   create_table "doodads", force: true do |t|
     t.string   "title",       null: false
     t.text     "description", null: false
-    t.integer  "apps_id",     null: false
-    t.integer  "users_id",    null: false
+    t.integer  "app_id",      null: false
+    t.integer  "user_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,19 @@
 <div class="app-doodads">
-  <h2>Doodads for <%= link_to @app.name, app_path(@app) %></h2>
+  <h1>Doodads for <%= link_to @app.name, app_path(@app) %></h1>
 
-  <%= "if @app.doodads.exists?" %>
+  <% unless @app.doodads.count > 0 %>
     <p>There are no Doodads for this app yet. Have a great idea? <%= link_to "Be the first!", new_doodad_path %></p>
-  <%= "end" %>
+  <% else %>
+    <ul>
+      <% @app.doodads.each do |doodad| %>
+        <li>
+          <h3><%= doodad.title %></h3>
+          <ul class="doodad-details">
+            <li>Submitted by <%= doodad.user.username %></li>
+            <li><%= doodad.description %></li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

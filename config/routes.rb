@@ -5,7 +5,7 @@ Doodads::Application.routes.draw do
     get :search, on: :collection
     member do
       post :follow
-      resources :doodads, except: [:edit, :update, :destroy]
+      resources :doodads, except: [:show, :edit, :update, :destroy]
     end
   end
 

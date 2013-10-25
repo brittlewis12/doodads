@@ -1,9 +1,14 @@
-<%= form_for [@app, @doodad] do |f| %>
-  <li><%= f.label :title %></li>
-  <li><%= f.text_field :title %></li>
+<div class="new-doodad">
+  <h3>Make your own doodad for <%= @app.name %></h3>
+  <a class="tooltip" href="#">What's a doodad?<span class="tooltipbackground"><em>Doodads!</em><br/> A doodad is just the next great idea for apps you already love! If you've ever thought, "if only this app could just..." -- that's a doodad!</a></span>
 
-  <li><%= f.label :description %></li>
-  <li><%= f.text_area :description, size: "60x15" %></li>
+  <%= form_for @doodad do |f| %>
+    <li><%= f.label :title %></li>
+    <li><%= f.text_field :title %></li>
 
-  <%= f.submit %>
-<% end %>
+    <li><%= f.label :description %></li>
+    <li><%= f.text_area :description, size: "60x15" %></li>
+
+    <%= f.submit %>
+  <% end %>
+</div>

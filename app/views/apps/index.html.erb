@@ -1,16 +1,17 @@
 <div class="apps-index">
   <p class="link"><img class="magnifying-glass" src="http://www.clker.com/cliparts/0/1/S/1/l/W/search-icon-hi.png"/><%= link_to "Search now", search_apps_path, class: "search-link" %><p>
+  <div class="whats-hot">
+    <h3>What's hot on <span>doodads</span>:</h1>
 
-  <h3>What's hot on <span>doodads</span>:</h1>
-
-  <% @apps.each do |app| %>
-      <div class="recent-search">
-        <a href="<%= app_path(app) %>"><img class="icon" src="<%= app.icon_url %>"></a>
-        <ul class="app-result">
-          <li><%= link_to app.name, app_path(app) %></li>
-          <% formatted_price = (app.price > 0 ? "$#{app.price}" : "Free") %>
-          <li><%= formatted_price %></li>
-        </ul>
-      </div>
-  <% end %>
+    <% @apps.each do |app| %>
+        <div class="recent-search">
+          <a href="<%= app_path(app) %>"><img class="icon" src="<%= app.icon_url %>"></a>
+          <ul class="app-result">
+            <li><%= link_to app.name, app_path(app) %></li>
+            <% formatted_price = (app.price > 0 ? "$#{app.price}" : "Free") %>
+            <li><%= formatted_price %></li>
+          </ul>
+        </div>
+    <% end %>
+  </div>
 </div>

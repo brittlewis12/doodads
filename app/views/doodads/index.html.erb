@@ -1,1 +1,7 @@
-<h2>Doodads for <%= link_to @app.name, app_path(@app) %></h2>
+<div class="app-doodads">
+  <h2>Doodads for <%= link_to @app.name, app_path(@app) %></h2>
+
+  <%= "if @app.doodads.exists?" %>
+    <p>There are no Doodads for this app yet. Have a great idea? <%= link_to "Be the first!", new_doodad_path %></p>
+  <%= "end" %>
+</div>

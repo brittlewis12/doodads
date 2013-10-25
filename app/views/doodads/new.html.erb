@@ -1,9 +1,9 @@
-<% form_for [@app, @doodad] do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
+<%= form_for [@app, @doodad] do |f| %>
+  <li><%= f.label :title %></li>
+  <li><%= f.text_field :title %></li>
 
-<%= f.label :description %>
-<%= f.text_area :description %>
+  <li><%= f.label :description %></li>
+  <li><%= f.text_area :description, size: "60x15" %></li>
 
-<%= f.submit %>
-
+  <%= f.submit %>
+<% end %>

@@ -14,9 +14,9 @@
   </ul>
   
   <% if session[:user_id].present? %>
+    <%= link_to "See doodads!", doodads_path, user_id: @app, class: "see-doodads" %>
     <!-- LATER: if followed already, say unfollow -->
     <%= button_to "follow", action: :follow, class: "app-button" %>
-    <%= link_to "See doodads!", doodads_path, user_id: @app%>
   <% end %>
 
 </div>
@@ -32,11 +32,10 @@
       <% end %>
     <% end %>
   </div>
-
-  <div class="ratings"><%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %><br/>
-  <%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %></div>
-
-  <div class="footer-links"><%= link_to @app.developer, @app.developer_url %> | 
-    
-  <%= link_to "View on iTunes", @app.itunes_url %></div>
 </div>
+<div class="ratings"><%= "This version has an average #{@app.current_rating} rating in #{@app.current_rating_count} reviews." %><br/>
+<%= "All versions have an average #{@app.total_rating} rating in #{@app.total_rating_count} reviews." %></div>
+
+<div class="footer-links"><%= link_to @app.developer, @app.developer_url %> | 
+  
+<%= link_to "View on iTunes", @app.itunes_url %></div>

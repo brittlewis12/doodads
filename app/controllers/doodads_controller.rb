@@ -4,7 +4,9 @@ class DoodadsController < ApplicationController
     @app = App.find(params[:id])
   end
 
-  def new; end
+  def new
+    @doodad = Doodad.new
+  end
 
   def create; end
 

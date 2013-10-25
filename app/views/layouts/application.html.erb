@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Doodads</title>
+  <title>Doodads!</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300|Architects+Daughter|Arvo' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,7 +10,7 @@
 <body>
   <header>
     <div class="header">
-      <div class="logo"><%= link_to "Doodads", root_path %></div>
+      <div class="logo"><%= link_to "doodads", root_path %></div>
       <div class="links">  
         <ul>
           <% unless logged_in? %>
@@ -17,7 +18,7 @@
             <li><%= link_to "Sign in", new_session_path %></li>
           <% else %>
             <li><%= link_to "Sign out", session_path, method: "delete" %></li>
-            <li><%= link_to "My Doodads account", user_path(current_user) %></li>
+            <li><%= link_to "My Account", user_path(current_user) %></li>
           <% end %>
           <li><%= link_to "Find Apps ", apps_path %></li>
         </ul>

@@ -22,8 +22,8 @@ body {
   font-size: 16px;
   color: #555;
   background-color: rgba(255,255,255,.8);
-  font-family: Helvetica, sans-serif;
-  line-height: 1.4;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -31,7 +31,7 @@ body {
 header{
   padding: 1% 0 4.5%;
   border-top: 2px solid #ccc;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid #ccc;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
@@ -68,10 +68,11 @@ a:hover {
 
 div.logo, .logo a, .logo a:link .logo a:visited, .logo a:hover, .logo a:active {
   float: left;
+  font-family: 'Architects Daughter', Helvetica, sans-serif;
   margin-left: 5%;
   margin-top: .5%;
   margin-bottom: .5%;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #444;
   text-decoration: none;
   font-weight: bold;
@@ -229,6 +230,10 @@ div.apps-index a.search-link {
   border-radius: 35px;
 }
 
+.see-doodads {
+  font-size: 1.3em;
+}
+
 .magnifying-glass {
   position: relative;
   left: 3%;
@@ -239,9 +244,43 @@ div.apps-index a.search-link {
 }
 
 h1 {
-  font-family: Georgia, serif;
+  font-family: 'Arvo', sans-serif;
   margin: 0;
-  padding: 15px 0 0 0;
+  padding: 3% 0 2% 0;
+}
+
+h1.create {
+  padding-top: 0;
+  padding-left: 15%;
+}
+
+div.account-page {
+  padding-left: 15%;
+}
+
+form.user {
+  padding-left: 15%;
+}
+
+h2 {
+  font-family: 'Arvo', sans-serif;
+}
+
+h3 {
+  font-family: 'Arvo', sans-serif;
+  font-size: 1.5em;
+}
+
+div.whats-hot {
+  padding-left: 15%;
+}
+
+div.search-results {
+  padding-left: 15%;
+}
+
+div.app-doodads {
+  padding-left: 15%;
 }
 
 div.showcase {
@@ -282,10 +321,55 @@ div.showcase input {
   padding: .5em 1em;
   color: #eee;
   border-radius: 50px;
-  font-family: Georgia, serif;
+  font-family: 'Arvo', serif;
   font-size: 1.5em;
-  display: inline-block;
-  width: auto;
+}
+
+.new_doodad {
+  padding-left: 15%;
+}
+
+.session {
+  padding-left: 15%;
+}
+
+.session input {
+  color: #333;
+  border: 1px solid #777;
+  padding: 10px;
+  font-size: 1em;
+  cursor: normal;
+}
+
+.session input[type=submit]:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.new_doodad input {
+  color: #333;
+  border: 1px solid #777;
+  padding: 10px;
+  font-size: 1em;
+  cursor: normal;
+}
+
+.new_doodad input[type=submit]:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.user input {
+  color: #333;
+  border: 1px solid #777;
+  padding: 10px;
+  font-size: 1em;
+  cursor: normal;
+}
+
+.user input[type=submit]:hover {
+  color: #fff;
+  cursor: pointer;
 }
 
 form.app-button {
@@ -296,9 +380,14 @@ div.app-buttons {
   display: inline;
 }
 
+.new_doodad {
+  list-style-type: none;
+}
+
 p.description {
   max-width: 80%;
   margin-left: 5%;
+  margin-top: 0;
 }
 
 div.ratings {

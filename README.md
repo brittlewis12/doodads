@@ -28,4 +28,4 @@ Another, more challenging capability I'd like to add in the future is updates wh
 
 ## Wrapping up
 
-Feel free to comment, sumbit issues, and fork/pull request any changes you'd like to see. I welcome feedback with regards to any aspect of the application -- this was, above all, was a learning experience after all. I'd like to thank my instructors @jkonowitch, @h4w3, @peterylai for facilitating my journey so far and making it an incredibly fun and rewarding experience already; I'd like to thank my parents for making this possible.
+Feel free to comment, sumbit issues, and fork/pull request any changes you'd like to see. I welcome feedback with regards to any aspect of the application -- this was, above all, was a learning experience after all. I'd like to thank my instructors @jkonowitch, @h4w5, @peterylai for facilitating my journey so far and making it an incredibly fun and rewarding experience already; I'd like to thank my parents for making this possible.

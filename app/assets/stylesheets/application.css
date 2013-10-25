@@ -278,12 +278,22 @@ div.showcase input {
   background: #333;
   border: 0;
   cursor:pointer;
-  margin: 0;
+  margin: .5em 0;
   padding: .5em 1em;
   color: #eee;
-  border-radius: 50% 50% 50% 50%;
+  border-radius: 50px;
   font-family: Georgia, serif;
   font-size: 1.5em;
+  display: inline-block;
+  width: auto;
+}
+
+form.app-button {
+  display: inline;
+}
+
+div.app-buttons {
+  display: inline;
 }
 
 p.description {

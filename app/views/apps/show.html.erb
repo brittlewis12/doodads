@@ -12,10 +12,11 @@
       <li>Universal</li>
     <% end %>
   </ul>
-
+  
   <% if session[:user_id].present? %>
     <!-- LATER: if followed already, say unfollow -->
-    <%= button_to "follow", action: :follow %>
+    <%= button_to "follow", action: :follow, class: "app-button" %>
+    <%= link_to "See doodads!", doodads_path, user_id: @app%>
   <% end %>
 
 </div>

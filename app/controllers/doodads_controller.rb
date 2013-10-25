@@ -1,6 +1,8 @@
 class DoodadsController < ApplicationController
 
-  def index; end
+  def index
+    @app = App.find(params[:id])
+  end
 
   def new; end
 

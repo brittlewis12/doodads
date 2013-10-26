@@ -21,8 +21,8 @@
         <li>
           <h3><%= doodad.title %></h3>
           <ul class="doodad-details">
+            <li>Doodad for <%= link_to doodad.app.name, app_path(doodad.app) %></li>
             <li>Submitted by you!</li>
-            <li>Doodad for <%= doodad.app.name %></li>
             <li><%= doodad.description %></li>
           </ul>
         </li>

@@ -303,6 +303,10 @@ div.account-page {
   padding-left: 15%;
 }
 
+div.account-page h1 {
+  padding: 0; 
+}
+
 form.user {
   padding-left: 15%;
 }
@@ -314,6 +318,28 @@ h2 {
 h3 {
   font-family: 'Arvo', sans-serif;
   font-size: 1.5em;
+}
+
+h3.doodads, h3.apps {
+  margin-bottom: 0;
+}
+
+h3.single-doodad {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+ul.my-apps {
+  margin-top: .5em;
+}
+
+ul.my-doodads {
+  margin-top: .5em;
+  list-style-type: none;
+}
+
+ul.doodad-details {
+  padding-bottom: .5em;
 }
 
 div.whats-hot {

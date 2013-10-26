@@ -1,25 +1,25 @@
 <div class="account-page">
   <h1><%= @user.username %>'s Account</h1>
 
-  <h3 class="apps">My Apps:</h3>
+  <h3 class="apps">My Apps</h3>
   <% if @user.followed_apps.length == 0 %>
     <p>You haven't followed any apps yet. <%= link_to "Get started now!", search_apps_path %> </p>
   <% else %>
-    <ul>
+    <ul class="my-apps">
       <% @user.followed_apps.each do |app| %>
         <li><%= link_to app.name, app_path(app) %>
       <% end %>
     </ul>
   <% end %>
 
-  <h3 class="doodads">My Doodads:</h3>
+  <h3 class="doodads">My Doodads</h3>
   <% unless @user.doodads.count > 0 %>
     <p>You haven't created any Doodads yet. Have a great idea? Find an app and <%= link_to "get started now!", search_apps_path %></p>
   <% else %>
-    <ul>
+    <ul class="my-doodads">
       <% @user.doodads.each do |doodad| %>
         <li>
-          <h3><%= doodad.title %></h3>
+          <h3 class="single-doodad"><%= doodad.title %></h3>
           <ul class="doodad-details">
             <li>Doodad for <%= link_to doodad.app.name, app_path(doodad.app) %></li>
             <li>Submitted by you!</li>

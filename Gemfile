@@ -47,6 +47,9 @@ gem 'json'
 # Use 12factor to aid logging on Heroku
  gem 'rails_12factor', group: [:production]
 
+# Use ThumbsUp to enable voting on doodads & karma management for users
+ gem 'thumbs_up'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

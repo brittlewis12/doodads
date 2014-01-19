@@ -31,3 +31,6 @@ Another, more challenging capability I'd like to add in the future is to receive
 ## Wrapping up
 
 Feel free to comment, sumbit issues, and fork/pull request any changes you'd like to see. I welcome feedback with regards to any aspect of the application -- this was, above all, a learning experience after all. I'd like to thank my instructors [@jkonowitch](http://github.com/jkonowitch), [@h4w5](http://github.com/h4w5), [@peterylai](http://github.com/peterylai) for facilitating my journey so far and making it an incredibly fun and already rewarding experience. I'd like to thank my parents for making it possible for me to take this journey. Finally, I'd like to thank my class, WDI September Arrays, for helping motivate, inspire, and entertain every step of way. I'm so impressed by all of you, and I can't wait to see what we can make next.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/brittlewis12/doodads/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
